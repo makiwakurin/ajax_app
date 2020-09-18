@@ -5,7 +5,6 @@ class PostsController < ApplicationController
 
   def create
     Post.create(content:params[:content])
-    binding.pry
     redirect_to action: :index
   end
 
@@ -18,6 +17,6 @@ class PostsController < ApplicationController
     end
 
     item = Post.find(params[:id])
-    render json: { post: item}
+    render json: { post: item }
   end
 end
