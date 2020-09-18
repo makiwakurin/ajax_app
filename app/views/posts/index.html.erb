@@ -4,6 +4,8 @@
   <%= form.submit '投稿する' , id: "submit" %>
 <% end %>
 <% @posts.each do |post| %>
+<%# 　data-idはメモのidが入り、data-checkedは既読の有無を管理する
+checkedカラムの情報が入る %>
   <div class="post" data-id=<%= post.id %> data-check=<%= post.checked %>>
     <div class="post-date">
       投稿日時：<%= post.created_at %>
