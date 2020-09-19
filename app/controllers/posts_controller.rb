@@ -4,7 +4,9 @@ class PostsController < ApplicationController
   end
 
   def create
+    # メモの投稿処理を変数postに代入しjson形式で返却する
     post = Post.create(content:params[:content], checked: false)
+    # post:postと言うメモの情報をjson形式でjavascriptへ返却
     render json:{ post: post }
   end
 
